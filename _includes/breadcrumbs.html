@@ -10,6 +10,15 @@
   {% for crumb in crumbs %}
     {{ crumb }} <br/>
   {% endfor %}
+  <br/>
+  page.title: {{ page.title }} <br/>
+  <br/>
+  page.breadcrumbs: <br/>
+  {% for crumb in page.breadcrumbs %}
+    {{ crumb }} <br/>
+  {% endfor %}
+  <br/>
+  page.parent.url: {{ page.parent.url }} <br/>
 
   <!-- Define Site's Home Root -->
   <a href="/bondipush/">Home</a>
