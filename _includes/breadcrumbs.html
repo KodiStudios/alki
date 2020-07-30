@@ -1,10 +1,14 @@
 <div id="breadcrumbs">
   <!-- Create crumbs list -->
   <!-- Basically, Split Url by "/" -->
-  {% assign crumbs =  page.url | remove:'/index.html' | split: '/' %}
+  {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
 
-  {% for crumb in crumbs offset: 1 %}
-    {{ crumb }}
+  <!-- Debug -->
+  page.url: {{ page.url }} <br/>
+  <br/>
+  crumbs: <br/>
+  {% for crumb in crumbs %}
+    {{ crumb }} <br/>
   {% endfor %}
 
   <!-- Define Site's Home Root -->
