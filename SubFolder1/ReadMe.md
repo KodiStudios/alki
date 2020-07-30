@@ -4,8 +4,8 @@
 
 Should contain links to other files?
 
-Leaf Topics  
+Child Leafs  
 [Topic1.md](Topic1.md)
 
-Category Topics  
+Child Folders  
 [Sub1/ReadMe.md](Sub1/ReadMe.md)
