@@ -30,6 +30,10 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 
 ### Test
 
+Folder:  
+[SubFolder1/ReadMe.md](SubFolder1/ReadMe.md)
+
+Specific Page:  
 [SubFolder1/Topic1.md](SubFolder1/Topic1.md)
 
 ### Jekyll Themes
