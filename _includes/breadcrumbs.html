@@ -1,6 +1,10 @@
 <div id="breadcrumbs">
+  <!-- Create crumbs list -->
   {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
-  <a href="/">Home</a>
+
+
+  <!-- Define Site's Home Root -->
+  <a href="/bondipush/">Home</a>
   {% for crumb in crumbs offset: 1 %}
     {% if forloop.last %}
       / {{ page.title }}
