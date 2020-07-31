@@ -2,9 +2,11 @@
 title: For Each Title
 ---
 
+# {{ page.title }}
+
 {% include breadcrumbs.html %}
 
-# Foreach
+## Foreach
 
 for (let childObjectId: number in Object.keys(this.childObjectIds))
 
