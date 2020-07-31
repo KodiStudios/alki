@@ -36,6 +36,7 @@ Full Navigation:
 [SubFolder1/Sub1/ReadMe.md](SubFolder1/Sub1/ReadMe.md)  
 [SubFolder1/Sub1/DetailTopic1.md](SubFolder1/Sub1/DetailTopic1.md)  
 [SubFolder2/Topic2.md](SubFolder2/Topic2.md)  
+[typescript/foreach.md](typescript/foreach.md)  
 
 ### Jekyll Themes
 
