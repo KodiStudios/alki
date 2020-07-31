@@ -9,13 +9,13 @@
 	{% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
 
 	<!-- Debug -->
-	<!-- page.url: {{ page.url }} <br/>
+	page.url: {{ page.url }} <br/>
 	<br/>
 	crumbs: <br/>
 	{% for crumb in crumbs %}
 		{{ crumb }} <br/>
 	{% endfor %}
-	<br/> -->
+	<br/>
 
 	<!-- Define Site's Home Root -->
 	<a href="/bondipush/">Home</a>
@@ -29,9 +29,16 @@
 			/ {{ page.title }}
 		{% else %}
 			<!-- Note: '/' here is used as breadcrumb separator -->
+			<!-- Note: Inner Loop creates path Up To current Crumb -->
 			<!-- Note: "capitalize" capitalizes only first letter, NOT full text! -->
-			/ <a href="/bondipush
-				{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">t13{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>
+			/ 
+			<a href="/bondipush
+				{% assign crumb_limit = forloop.index | plus: 1 %}
+				{% for crumb in crumbs limit: crumb_limit %}
+					{{ crumb | append: '/' }}
+				{% endfor %}
+				">t14 {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}
+			</a>
 		{% endif %}
 	{% endfor %}
 </div>
