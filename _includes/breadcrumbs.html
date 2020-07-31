@@ -13,9 +13,17 @@
 	<br/>
 	crumbs: <br/>
 	{% for crumb in crumbs %}
-		{{ crumb }} <br/>
+		forloop.index: {{ crumb }} <br/>
 	{% endfor %}
 	<br/>
+
+	<!-- Sample Output:
+	page.url: /SubFolder1/Topic1.html
+
+	crumbs:
+
+	SubFolder1
+	Topic1.html -->
 
 	<!-- Define Site's Home Root -->
 	<a href="/bondipush/">Home</a>
@@ -37,7 +45,7 @@
 				{% for crumb in crumbs limit: crumb_limit %}
 					{{ crumb | append: '/' }}
 				{% endfor %}
-				">t14 {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}
+				">t15 {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}
 			</a>
 		{% endif %}
 	{% endfor %}
