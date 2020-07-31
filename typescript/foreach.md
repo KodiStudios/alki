@@ -1,12 +1,12 @@
-# Page Title
-
-<!-- ---
-title: For Each Title
---- -->
-
-## Secondary {{ page.title }}
+---
+title: For Each Title 3
+---
 
 {% include breadcrumbs.html %}
+
+# {{page.title}}
+
+## Secondary {{ page.title }}
 
 ## Foreach
 
