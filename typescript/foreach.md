@@ -1,6 +1,8 @@
 {% include breadcrumbs.html %}
 
-title: foreach
+---
+title: For Each Title
+---
 
 # Foreach
 
