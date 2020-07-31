@@ -1,8 +1,8 @@
-{% include breadcrumbs.html %}
-
 ---
 title: For Each Title
 ---
+
+{% include breadcrumbs.html %}
 
 # Foreach
 
