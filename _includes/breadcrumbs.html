@@ -13,7 +13,7 @@
 	<br/>
 	crumbs: <br/>
 	{% for crumb in crumbs %}
-		forloop.index: {{ crumb }} <br/>
+		{{forloop.index}}: {{ crumb }} <br/>
 	{% endfor %}
 	<br/>
 
@@ -45,7 +45,7 @@
 				{% for crumb in crumbs limit: crumb_limit %}
 					{{ crumb | append: '/' }}
 				{% endfor %}
-				">t15 {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}
+				">t16 {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}
 			</a>
 		{% endif %}
 	{% endfor %}
