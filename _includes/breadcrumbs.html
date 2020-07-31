@@ -9,43 +9,48 @@
 	{% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
 
 	<!-- Debug -->
-	page.url: {{ page.url }} <br/>
+	<!-- page.url: {{ page.url }} <br/>
 	<br/>
 	crumbs: <br/>
 	{% for crumb in crumbs %}
 		{{forloop.index}}: {{ crumb }} <br/>
 	{% endfor %}
-	<br/>
+	<br/> -->
 
 	<!-- Sample Output:
-	page.url: /SubFolder1/Topic1.html
+		Actual Url: https://kodistudios.github.io/bondipush/SubFolder1/Topic1.html
 
-	crumbs:
+		page.url: /SubFolder1/Topic1.html
 
-	SubFolder1
-	Topic1.html -->
+		crumbs:
+		1:
+		2: SubFolder1
+		3: Topic1.html
+	-->
 
 	<!-- Define Site's Home Root -->
 	<a href="/bondipush/">Home</a>
 
-	<!-- Offset: 1 because first entry is empty -->
+	<!-- Offset: 1 because first entry is empty! -->
 	{% for crumb in crumbs offset: 1 %}
 		{% if forloop.last %}
+			<!-- Process File Crumb -->
 			<!-- As last breadcrumb, add page's Title, NOT page's file name -->
 			<!-- In md files, page.title is empty for some reason -->
-			<!-- Note: '/' here is used as breadcrumb separator -->
+			<!-- '/' here is used as breadcrumb separator -->
 			/ {{ page.title }}
 		{% else %}
-			<!-- Note: '/' here is used as breadcrumb separator -->
-			<!-- Note: Inner Loop creates path Up To current Crumb -->
-			<!-- Note: "capitalize" capitalizes only first letter, NOT full text! -->
+			<!-- Process Folder Crumb -->
+			<!-- '/' here is used as breadcrumb separator -->
+			<!-- Inner Loop creates full Url Link from root, up co current folder crumb -->
+			<!-- "capitalize" capitalizes only first letter, NOT full text! -->
 			/ 
 			<a href="/bondipush
 				{% assign crumb_limit = forloop.index | plus: 1 %}
 				{% for crumb in crumbs limit: crumb_limit %}
 					{{ crumb | append: '/' }}
 				{% endfor %}
-				">t16 {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}
+				">t17 {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}
 			</a>
 		{% endif %}
 	{% endfor %}
