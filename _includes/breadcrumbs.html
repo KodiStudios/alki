@@ -1,36 +1,37 @@
 <div id="breadcrumbs">
-  <!-- Create crumbs list -->
-  <!-- Basically, Split Url by "/" -->
-  {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+	<!--
+		Output:
+		Home / Crumb1 / Crumb2 / page.title
+	-->
 
-  <!-- Debug -->
-  <!-- page.url: {{ page.url }} <br/>
-  <br/>
-  crumbs: <br/>
-  {% for crumb in crumbs %}
-    {{ crumb }} <br/>
-  {% endfor %}
-  <br/> -->
+	<!-- Create crumbs list -->
+	<!-- Basically, Split Url by "/" -->
+	{% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
 
-  <!-- 
-    Format:
-    Home / Crumb1 / Crumb2 / page.title 
-  -->
+	<!-- Debug -->
+	<!-- page.url: {{ page.url }} <br/>
+	<br/>
+	crumbs: <br/>
+	{% for crumb in crumbs %}
+		{{ crumb }} <br/>
+	{% endfor %}
+	<br/> -->
 
-    <!-- Define Site's Home Root -->
-    <a href="/bondipush/">Home</a>
+	<!-- Define Site's Home Root -->
+	<a href="/bondipush/">Home</a>
 
-  <!-- Offset: 1 because first entry is empty -->
-  {% for crumb in crumbs offset: 1 %}
-    {% if forloop.last %}
-      <!-- As last breadcrumb, add page's Title, NOT page's file name -->
-      <!-- In md files, page.title is empty for some reason -->
-      <!-- Note: '/' here is used as breadcrumb separator -->
-      / {{ page.title }} 
-    {% else %}
-      <!-- Note: '/' here is used as breadcrumb separator -->
-      <!-- Note: "capitalize" capitalizes only first letter, NOT full text! -->
-      / <a href="/bondipush{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>
-    {% endif %}
-  {% endfor %}
+	<!-- Offset: 1 because first entry is empty -->
+	{% for crumb in crumbs offset: 1 %}
+		{% if forloop.last %}
+			<!-- As last breadcrumb, add page's Title, NOT page's file name -->
+			<!-- In md files, page.title is empty for some reason -->
+			<!-- Note: '/' here is used as breadcrumb separator -->
+			/ {{ page.title }}
+		{% else %}
+			<!-- Note: '/' here is used as breadcrumb separator -->
+			<!-- Note: "capitalize" capitalizes only first letter, NOT full text! -->
+			/ <a href="/bondipush
+				{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>
+		{% endif %}
+	{% endfor %}
 </div>
