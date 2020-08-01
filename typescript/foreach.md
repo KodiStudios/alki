@@ -6,23 +6,22 @@ title: Foreach
 
 # {{page.title}}
 
+In Typescript, there are two foreach loop types, for..of and for...in.
+
+For...of is a standard foreach loop:
+
 ```typescript
 let cities: Array<string> = new Array<string>();
 cities.push("Los Angeles");
 cities.push("Seattle");
 
-for (let city: string of cities)
-{
+for (let city of cities) {
     console.log(city);
 }
-
 ```
 
-Another solution:  
-for (var process of processes){}
-
 Note:  
-Note there is a difference "in" and "of"  
+Note there is anota difference "in" and "of"  
 This is different from for (var process in processes){}  
 For..in will list all properties of object, including interited  
 

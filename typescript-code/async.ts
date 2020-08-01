@@ -1,43 +1,23 @@
-namespace Async
-{
-async function CreateGreeting1(name: string): Promise<string>
-{
-    let result: string = "Hello " + name + " from Simple Async!";
-    return result;
-}
+namespace Async {
 
-function CreateGreeting2(name: string): Promise<string>
-{
-    return new Promise<string>((resolve) => {
-        let result: string = "Hello " + name + " from Explicit Promise!";
-        resolve(result);
-    });
-}
+    async function CreateGreeting(name: string): Promise<string> {
+        return new Promise<string>((resolve) => {
+            let result: string = "Hello " + name;
+            resolve(result);
+        });
+    }
 
-async function ShowGreetings1() {
-    let result1: string = await CreateGreeting1("Niko");
-    console.log("result1: " + result1);
+    async function ShowGreetings() {
+        let nikoGreeting: string = await CreateGreeting("Niko");
+        console.log("nikoGreeting: " + nikoGreeting);
 
-    let result2: string = await CreateGreeting2("Niko");
-    console.log("result2: " + result2);
-}
+        let dimaGreeting: string = await CreateGreeting("Dima");
+        console.log("dimaGreeting: " + dimaGreeting);
+    }
 
-function ShowGreetings2()
-{
-    CreateGreeting1("Dima").then((result1: string) => {
-        console.log("result1: " + result1);
-    });
-
-    CreateGreeting2("Dima").then((result2: string) => {
-        console.log("result2: " + result2);
-    });
-}
-
-export async function Main()
-{
-    await ShowGreetings1();
-    ShowGreetings2();
-}
+    export async function Main() {
+        await ShowGreetings();
+    }
 
 }
 
