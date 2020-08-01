@@ -20,12 +20,7 @@ for (let city of cities) {
 }
 ```
 
-Note:  
-Note there is anota difference "in" and "of"  
-This is different from for (var process in processes){}  
-For..in will list all properties of object, including interited  
+For..in is a specialized foreach loop used to list all properties of object, including interited  
 
-For..of is a true foreach loop  
-
-References:
+References:  
 <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of>
