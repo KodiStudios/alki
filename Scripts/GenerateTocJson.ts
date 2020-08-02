@@ -40,7 +40,7 @@ namespace TocPages
         return files;
     }
 
-    function MakeTocJson(directoryPath: string): string
+    function ScanDirectory(directoryPath: string): string
     {
         // Read Files
         let files: string[] = GetFilesAndDirectories(directoryPath);
@@ -73,7 +73,7 @@ namespace TocPages
     {
         let fileName: string = "_toc.json";
 
-        let tocString: string = MakeTocJson(directoryPath);
+        let tocString: string = ScanDirectory(directoryPath);
         fs.writeFileSync(path.join(fileName), tocString);
     }
 
