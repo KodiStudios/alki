@@ -5,10 +5,6 @@ import * as path from "path";
 
 namespace Toc
 {
-    function GenerateToc()
-    {
-        // Read _toc
-    }
 
     function GetLinkString(value: string)
     {
@@ -19,7 +15,7 @@ namespace Toc
         return linkString;
     }
 
-    export function Main()
+    function GenerateToc()
     {
         let tocObject: any = JSON.parse(fs.readFileSync("_toc.json").toString());
         
@@ -33,6 +29,11 @@ namespace Toc
         let headerString: string = fs.readFileSync(path.join(__dirname, "TocHeader.md")).toString();
         mdContent = headerString + mdContent;
         fs.writeFileSync("ReadMe.md", mdContent);
+    }
+
+    export function Main()
+    {
+        GenerateToc();
     }
 }
 

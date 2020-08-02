@@ -1,7 +1,7 @@
 import * as fs from 'fs'; // File Manipulation
-import {argv} from 'yargs'; // Process' Arguments
 import * as child_process from 'child_process';
 import * as path from 'path';
+import {argv} from 'yargs'; // Process' Arguments
 
 namespace TocPages
 {
