@@ -1,7 +1,4 @@
 {% include breadcrumbs.html %}
 
-# SubFolder1/Sub1
-
-[Parent](../ReadMe.md)
-
-[DetailTopic1](DetailTopic1.md)
+# Table of Contents
+[DetailTopic1.md](DetailTopic1.md)  
