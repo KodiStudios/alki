@@ -17,7 +17,17 @@ namespace Toc
 
     function GenerateToc()
     {
-        let tocObject: any = JSON.parse(fs.readFileSync("_toc.json").toString());
+        let tocObject: any;
+        if (fs.existsSync("_toc.json"))
+        {
+            tocObject = JSON.parse(fs.readFileSync("_toc.json").toString());
+        }
+        else
+        {
+            // TODO: Generate Pages!
+            tocObject = new Object();
+            tocObject.pages = [];
+        }
         
         let mdContent: string = "";
         for(let page of tocObject.pages)

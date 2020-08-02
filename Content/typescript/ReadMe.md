@@ -1,10 +1,6 @@
----
-title: Typescript
----
-
 {% include breadcrumbs.html %}
 
-# {{page.title}}
-
-* [Async](async.md)  
-* [Foreach](foreach.md)  
+# Table of Contents
+[array.md](array.md)  
+[async.md](async.md)  
+[foreach.md](foreach.md)  
