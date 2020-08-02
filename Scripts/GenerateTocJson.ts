@@ -1,7 +1,7 @@
 import * as fs from 'fs'; // File Manipulation
 import * as child_process from 'child_process';
 import * as path from 'path';
-import {argv} from 'yargs'; // Process' Arguments
+import {argv, string} from 'yargs'; // Process' Arguments
 
 namespace TocPages
 {
@@ -51,7 +51,8 @@ namespace TocPages
 
         for(let file of files)
         {
-            if (!file[0].startsWith('_'))
+            if (!file[0].startsWith('_')
+                && file.toUpperCase() !== "ReadMe.md".toUpperCase())
             {
                 pages.push(file);
             }
@@ -65,7 +66,7 @@ namespace TocPages
         //     fs.lstatSync(path.join(directoryPath, f)).isDirectory();
         // }
 
-        return JSON.stringify(tocObject);
+        return JSON.stringify(tocObject, null, /*indentation*/ 2);
     }
 
     function GenerateTocJson(directoryPath: string)

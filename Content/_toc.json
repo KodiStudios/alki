@@ -1,1 +1,7 @@
-{"pages":["SubFolder1","SubFolder2","typescript"]}
+{
+  "pages": [
+    "SubFolder1",
+    "SubFolder2",
+    "typescript"
+  ]
+}
