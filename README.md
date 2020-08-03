@@ -1,5 +1,5 @@
-# Language
+# Computer Language Best Practices
 
-Helping people by creating new experiences  
+More Cool Things with Less Code
 
 [Content](Content)  
