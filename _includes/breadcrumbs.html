@@ -18,7 +18,7 @@
 	<br/> -->
 
 	<!-- Sample Output:
-		Actual Url: https://kodistudios.github.io/artonav/SubFolder1/Topic1.html
+		Actual Url: https://kodistudios.github.io/alki/SubFolder1/Topic1.html
 
 		page.url: /SubFolder1/Topic1.html
 
@@ -29,7 +29,7 @@
 	-->
 
 	<!-- Define Site's Home Root -->
-	<a href="/artonav/">artonav</a>
+	<a href="/alki/">alki</a>
 
 	<!-- Offset: 1 because first entry is empty! -->
 	{% for crumb in crumbs offset: 1 %}
@@ -45,7 +45,7 @@
 			<!-- Inner Loop creates full Url Link from root, up co current folder crumb -->
 			<!-- "capitalize" capitalizes only first letter, NOT full text! -->
 			/ 
-			<a href="/artonav
+			<a href="/alki
 				{% assign crumb_limit = forloop.index | plus: 1 %}
 				{% for crumb in crumbs limit: crumb_limit %}
 					{{ crumb | append: '/' }}

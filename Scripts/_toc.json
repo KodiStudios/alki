@@ -1,0 +1,7 @@
+{
+  "pages": [
+    "Assets",
+    "GenerateTocJson.ts",
+    "GenerateTocMd.ts"
+  ]
+}
