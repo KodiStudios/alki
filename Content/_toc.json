@@ -1,6 +1,7 @@
 {
   "pages": [
     "SubFolder1",
-    "typescript"
+    "typescript",
+    "SubFolder2"
   ]
 }

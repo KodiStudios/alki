@@ -25,15 +25,20 @@ export function WriteTocJson(
   directoryPath: string,
   append: boolean,
   recursive: boolean
-) {
+): string {
   if (recursive) {
     // Get directories, non-recursively
-    let directories: string[] = Ladro.GetDirectories(directoryPath);
+    let childDirectories: string[] = Ladro.GetDirectories(directoryPath);
 
-    for (let directory of directories) {
-      let fullPath: string = path.join(directoryPath, directory);
-      if (fs.lstatSync(fullPath).isDirectory()) {
-        WriteTocJson(fullPath, append, recursive);
+    for (let childDirectory of childDirectories) {
+      let childDirectoryFullPath: string = path.join(
+        directoryPath,
+        childDirectory
+      );
+      if (fs.lstatSync(childDirectoryFullPath).isDirectory()) {
+        // Call itself recursive
+        // Depth-First Search
+        WriteTocJson(childDirectoryFullPath, append, recursive);
       }
     }
   }
@@ -68,5 +73,7 @@ export function WriteTocJson(
     /*indentation*/ 2
   );
 
-  fs.writeFileSync(path.join(directoryPath, tocJsonFileName), tocJsonContent);
+  fs.writeFileSync(tocJsonFilePath, tocJsonContent);
+
+  return tocJsonFilePath;
 }
