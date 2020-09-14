@@ -2,4 +2,4 @@
 
 More Cool Things with Less Code
 
-[Content](Content)  
+[content](content)  
