@@ -52,7 +52,7 @@ namespace Toc {
       for (let fileAndDir of filesAndDirs) {
         let fileAndDirPath: string = path.join(directoryPath, fileAndDir);
         if (fs.lstatSync(fileAndDirPath).isDirectory()) {
-          // Call resursive
+          // Call recursive
           // Depth-First Search
           WriteToc(fileAndDirPath, append, recursive);
         }
