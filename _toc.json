@@ -1,0 +1,16 @@
+{
+  "pages": [
+    ".gitignore",
+    ".vscode",
+    "Content",
+    "ContentExamples",
+    "Docs",
+    "Ladro",
+    "LICENSE",
+    "node_modules",
+    "package-lock.json",
+    "package.json",
+    "Scripts",
+    "Test"
+  ]
+}

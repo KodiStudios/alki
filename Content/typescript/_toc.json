@@ -1,7 +1,9 @@
 {
   "pages": [
     "array.md",
+    "async.md",
+    "debugging.md",
     "foreach.md",
-    "async.md"
+    "system.md"
   ]
 }

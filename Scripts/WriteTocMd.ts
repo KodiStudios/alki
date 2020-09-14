@@ -5,7 +5,7 @@ import * as path from "path";
 import * as yargs from "yargs"; // Process Arguments
 import * as TocJsonLib from "./Assets/TocJsonLib";
 
-namespace Toc {
+namespace TocMd {
   // Creates Md Link out of string
   function ToMdLink(value: string) {
     let linkString: string = "";
@@ -38,7 +38,7 @@ namespace Toc {
   }
 
   // Creates Toc ReadMe.md file
-  function WriteTocReadMeMd(
+  function WriteToc(
     directoryPath: string,
     append: boolean,
     recursive: boolean
@@ -54,7 +54,7 @@ namespace Toc {
         if (fs.lstatSync(fileAndDirPath).isDirectory()) {
           // Call resursive
           // Depth-First Search
-          WriteTocReadMeMd(fileAndDirPath, append, recursive);
+          WriteToc(fileAndDirPath, append, recursive);
         }
       }
     }
@@ -79,17 +79,17 @@ namespace Toc {
       })
       .option("directory", {
         alias: "d",
-        default: ".",
+        default: path.join(__dirname, '..', 'Content'),
         description: "Directory.",
       })
       .option("recursive", {
         alias: "r",
-        default: false,
+        default: true,
         description: "Recursive.",
       })
       .help().argv; // Enable --help
 
-    WriteTocReadMeMd(
+    WriteToc(
       yargsOptions.directory,
       yargsOptions.append,
       yargsOptions.recursive
@@ -97,4 +97,4 @@ namespace Toc {
   }
 }
 
-Toc.Main();
+TocMd.Main();

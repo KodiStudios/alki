@@ -3,5 +3,7 @@
 # Table of Contents
 
 [array.md](array.md)  
-[foreach.md](foreach.md)  
 [async.md](async.md)  
+[debugging.md](debugging.md)  
+[foreach.md](foreach.md)  
+[system.md](system.md)  

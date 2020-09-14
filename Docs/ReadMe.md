@@ -2,4 +2,8 @@
 
 ## Install
 
-1. `npm install -g yarn`
+Steps:
+
+1. `npm install`
+
+_config.yml ???
