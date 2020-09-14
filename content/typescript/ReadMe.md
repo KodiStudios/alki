@@ -2,8 +2,8 @@
 
 # Table of Contents
 
-[array.md](array.md)  
-[async.md](async.md)  
-[debugging.md](debugging.md)  
-[foreach.md](foreach.md)  
-[system.md](system.md)  
+[Array](array.md)  
+[Async](async.md)  
+[Debugging](debugging.md)  
+[Foreach](foreach.md)  
+[System](system.md)  

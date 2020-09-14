@@ -3,7 +3,7 @@
 import * as yargs from "yargs"; // Process Arguments
 import * as TocJsonLib from "./Assets/TocJsonLib";
 
-// This namespace is required in order to have multiple Main funcitons
+// This namespace is required in order to have multiple Main functions
 namespace WriteTocJson {
   export function Main() {
     let yargsOptions = yargs

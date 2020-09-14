@@ -6,11 +6,22 @@ import * as yargs from "yargs"; // Process Arguments
 import * as TocJsonLib from "./Assets/TocJsonLib";
 
 namespace Toc {
+  function CapitalizeFirstLetter(s: string)
+  {
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+
   // Creates Md Link out of string
-  function ToMdLink(value: string) {
+  function ToMdLink(fileName: string) {
     let linkString: string = "";
 
-    linkString = `[${value}](${value})`;
+    let displayedFileName = fileName;
+
+    // Remove extension
+    displayedFileName = path.basename(displayedFileName, path.extname(displayedFileName));
+    displayedFileName = CapitalizeFirstLetter(displayedFileName);
+
+    linkString = `[${displayedFileName}](${fileName})`;
 
     return linkString;
   }
