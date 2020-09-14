@@ -79,7 +79,7 @@ namespace Toc {
       })
       .option("directory", {
         alias: "d",
-        default: path.join(__dirname, '..', 'Content'),
+        default: path.join(__dirname, '..', 'content'),
         description: "Directory.",
       })
       .option("recursive", {
