@@ -5,7 +5,7 @@ import * as path from "path";
 import * as yargs from "yargs"; // Process Arguments
 import * as TocJsonLib from "./Assets/TocJsonLib";
 
-namespace TocMd {
+namespace Toc {
   // Creates Md Link out of string
   function ToMdLink(value: string) {
     let linkString: string = "";
@@ -29,7 +29,7 @@ namespace TocMd {
     let tocMdContent: string = "";
     for (let pageName of tocObject.pages) {
       tocMdContent += ToMdLink(pageName);
-      tocMdContent += "  \n"; // Note, double space is important, it creates new-line
+      tocMdContent += "  \n"; // Note, double space is important, it creates new-line in md syntax
     }
 
     tocMdContent = headerMdContent + tocMdContent;
@@ -37,7 +37,7 @@ namespace TocMd {
     return tocMdContent;
   }
 
-  // Creates Toc ReadMe.md file
+  // Creates _toc.json and Toc ReadMe.md file
   function WriteToc(
     directoryPath: string,
     append: boolean,
@@ -97,4 +97,4 @@ namespace TocMd {
   }
 }
 
-TocMd.Main();
+Toc.Main();
