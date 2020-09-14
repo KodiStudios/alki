@@ -16,11 +16,12 @@ cities.push("Los Angeles");
 cities.push("Seattle");
 
 for (let city of cities) {
-    console.log(city);
+  console.log(city);
 }
 ```
 
-For..in is a specialized foreach loop used to list all properties of object, including interited  
+For..in is a specialized foreach loop used to list all properties of object, including inherited.
 
-References:  
+## References
+
 <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of>

@@ -7,28 +7,23 @@ title: Async
 # {{page.title}}
 
 ```typescript
-namespace Async {
-
-    async function CreateGreeting(name: string): Promise<string> {
-        return new Promise<string>((resolve) => {
-            let result: string = "Hello " + name;
-            resolve(result);
-        });
-    }
-
-    async function ShowGreetings() {
-        let nikoGreeting: string = await CreateGreeting("Niko");
-        console.log("nikoGreeting: " + nikoGreeting);
-
-        let dimaGreeting: string = await CreateGreeting("Dima");
-        console.log("dimaGreeting: " + dimaGreeting);
-    }
-
-    export async function Main() {
-        await ShowGreetings();
-    }
-
+async function CreateGreeting(name: string): Promise<string> {
+  // Simulate actual async operation:
+  return new Promise<string>((resolve) => {
+    let result: string = "Hello " + name;
+    resolve(result);
+  });
 }
 
-Async.Main();
+async function ShowGreetings() {
+  let greeting1: string = await CreateGreeting("Tiger");
+  console.log(greeting1);
+
+  let greeting2: string = await CreateGreeting("Dolphin");
+  console.log(greeting2);
+}
+
+export async function Main() {
+  await ShowGreetings();
+}
 ```

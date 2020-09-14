@@ -13,34 +13,32 @@ namespace ArrayExample {
 
     // Empty Array
     let bracketEmptyArray: string[] = [];
-    printArray("bracketEmptyArray", bracketEmptyArray);
 
     // Statically Initialized Array
     let bracketInitArray: string[] = ["California", "Washington"];
-    printArray("bracketInitArray", bracketInitArray);
 
     // Variant 2:
 
     // Empty Array
     let objectEmptyArray: Array<string> = new Array<string>();
-    printArray("objectEmptyArray", objectEmptyArray);
 
     // Statically Initialized Array
     let objectInitArray: Array<string> = new Array<string>(
       "California",
       "Washington"
     );
-    printArray("objectInitArray", objectInitArray);
 
     // Note, that Array<T> and T[] are fully interchangeable:
 
-    // Empty Array
-    let objectBracketEmptyArray: Array<string> = [];
-    printArray("objectBracketEmptyArray", objectBracketEmptyArray);
+    let interchangeable1: Array<string> = [];
+    let interchangeable2: string[] = new Array<string>();
 
-    // Statically Initialized Array Variant 3
-    let objectBracketInitArray: Array<string> = ["California", "Washington"];
-    printArray("objectBracketInitArray", objectBracketInitArray);
+    printArray("bracketEmptyArray", bracketEmptyArray);
+    printArray("bracketInitArray", bracketInitArray);
+    printArray("objectEmptyArray", objectEmptyArray);
+    printArray("objectInitArray", objectInitArray);
+    printArray("interchangeable1", interchangeable1);
+    printArray("interchangeable2", interchangeable2);
   }
 
   export function Main() {

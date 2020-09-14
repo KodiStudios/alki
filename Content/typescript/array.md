@@ -11,24 +11,27 @@ Typescript supports Array<> and [] syntax to define arrays. They are interchange
 Example:
 
 ```typescript
+// Variant 1:
+
+// Empty Array
 let bracketEmptyArray: string[] = [];
 
-let bracketInitArray: string[] = [
-    "California",
-    "Washington"
-];
+// Statically Initialized Array
+let bracketInitArray: string[] = ["California", "Washington"];
 
+// Variant 2:
+
+// Empty Array
 let objectEmptyArray: Array<string> = new Array<string>();
 
+// Statically Initialized Array
 let objectInitArray: Array<string> = new Array<string>(
-    "California",
-    "Washington"
+  "California",
+  "Washington"
 );
 
-let objectBracketEmptyArray: Array<string> = [];
+// Note, that Array<T> and T[] are fully interchangeable:
 
-let objectBracketInitArray: Array<string> = [
-    "California",
-    "Washington"
-];
+let interchangeable1: Array<string> = [];
+let interchangeable2: string[] = new Array<string>();
 ```
