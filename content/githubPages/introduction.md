@@ -6,10 +6,6 @@ title: GitHub Pages
 
 # {{page.title}}
 
-GitHub Pages is an easy way to create Web Site.
+GitHub Pages allow an easy way to create a Web Site.
 
 1. Enable GitHub Pages
-
-image.png
-
-1. Add image

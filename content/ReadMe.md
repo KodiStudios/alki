@@ -3,3 +3,4 @@
 # Table of Contents
 
 [Typescript](typescript)  
+[GitHub Pages](githubPages)  
