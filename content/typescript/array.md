@@ -30,7 +30,8 @@ let objectInitArray: Array<string> = new Array<string>(
   "Washington"
 );
 
-// Note, that Array<T> and T[] are fully interchangeable:
+// Note, that Array<T> and T[] are fully interchangeable,
+// No Casting needed
 
 let interchangeable1: Array<string> = [];
 let interchangeable2: string[] = new Array<string>();
