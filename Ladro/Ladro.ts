@@ -1,6 +1,6 @@
 import * as child_process from "child_process";
 
-// Since it's already a module, there is no need for namespace
+// Namespace: Since it's already a module, there is no need for namespace
 
 // Executes command and returns its output as array, single entry per line
 export function Execute(command: string): string[] {
