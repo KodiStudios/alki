@@ -34,6 +34,8 @@ This is a bootstrap build utility. From this point on, all other dependencies ca
 
 `yarn install`
 
+It seems Git Hub Pages Urls don't like to be with Upper case 😲
+
 npm install -g ts-node
 
 npm install npm@latest -g
