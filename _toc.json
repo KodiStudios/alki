@@ -8,6 +8,11 @@
     "Ladro",
     "LICENSE",
     "Scripts",
-    "Test"
+    "Test",
+    "content",
+    "node_modules",
+    "package.json",
+    "ReadMeUsage.md",
+    "yarn.lock"
   ]
 }
