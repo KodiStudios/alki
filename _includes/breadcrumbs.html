@@ -50,8 +50,10 @@
 				{% for crumb in crumbs limit: crumb_limit %}
 					{{ crumb | append: '/' }}
 				{% endfor %}">
-				{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}
+				{{ crumb | replace:'-',' ' | remove:'.html' }}
 			</a>
 		{% endif %}
 	{% endfor %}
 </div>
+
+<!-- {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }} -->
