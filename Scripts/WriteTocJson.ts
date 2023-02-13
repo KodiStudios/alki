@@ -1,7 +1,7 @@
 // Generates Table of Contents Json _toc.json file in specified directories
 
 import * as yargs from "yargs"; // Process Arguments
-import * as TocJsonLib from "./Assets/TocJsonLib";
+import * as TocJsonLib from "./Helpers/TocJsonLib";
 
 // This namespace is required in order to have multiple Main functions
 namespace WriteTocJson {
