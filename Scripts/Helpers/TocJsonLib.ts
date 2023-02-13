@@ -21,15 +21,18 @@ export function GetWikiFilesAndDirectories(directoryPath: string): string[] {
   return filesAndDirsResult;
 }
 
+// Reads File Names in a given Directory
+// And creates _toc.json File
 export function WriteTocJson(
   directoryPath: string,
-  append: boolean,
+  append: boolean, // Append to existing _toc.json
   recursive: boolean
 ): string {
   if (recursive) {
-    // Get directories, non-recursively
+    // Get Child directories, non-recursively
     let childDirectories: string[] = Ladro.GetDirectories(directoryPath);
 
+    // Dive into each Child Directory
     for (let childDirectory of childDirectories) {
       let childDirectoryFullPath: string = path.join(
         directoryPath,
@@ -49,9 +52,10 @@ export function WriteTocJson(
   let tocObject: any;
 
   if (append && fs.existsSync(tocJsonFilePath)) {
+    // Read existing _toc.json
     tocObject = JSON.parse(fs.readFileSync(tocJsonFilePath).toString());
   } else {
-    // Create empty object, so that toc is generated
+    // Create an empty object, so that toc is generated
     tocObject = new Object();
     tocObject.pages = [];
   }

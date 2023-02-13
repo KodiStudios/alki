@@ -1,5 +1,5 @@
 ---
-title: GitHub Pages
+title: GitHub Pages Introduction
 ---
 
 {% include breadcrumbs.html %}

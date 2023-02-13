@@ -2,4 +2,4 @@
 
 # Table of Contents
 
-[DetailTopic1.md](DetailTopic1.md)  
+[Detail Topic](DetailTopic1.md)  

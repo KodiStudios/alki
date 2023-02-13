@@ -29,7 +29,6 @@ Restart shell prompt
 
 yarn global add typescript
 
-
 This is a bootstrap build utility. From this point on, all other dependencies can be downloaded with `package.json`.
 
 `yarn install`
@@ -45,3 +44,12 @@ Install Git
 Install NodeJs LTS version  
 
 Yarn list -g
+
+
+Dev Workflow
+
+Create Folder
+
+(Optional) Directory Display Name
+
+Add .md file
