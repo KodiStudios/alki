@@ -3,30 +3,49 @@
 import * as fs from "fs";
 import * as path from "path";
 import * as yargs from "yargs"; // Process Arguments
-import * as TocJsonLib from "./Assets/TocJsonLib";
+import * as TocJsonLib from "./Helpers/TocJsonLib";
 
 namespace Toc {
-  function CapitalizeFirstLetter(s: string)
-  {
-    return s.charAt(0).toUpperCase() + s.slice(1);
-  }
+  // function CapitalizeFirstLetter(s: string)
+  // {
+  //   return s.charAt(0).toUpperCase() + s.slice(1);
+  // }
 
-  // Creates Md Link out of string
-  function ToMdLink(fileName: string) {
-    let linkString: string = "";
+  // Creates Md Link out of File Name or Directory Name
+  function ToMdLink(pageFilePath: string) {
+    let mdLink: string = "";
 
-    let displayedFileName = fileName;
+    let displayedFileName = pageFilePath;
+
+    // Get Page Title
+    let title = displayedFileName;.0
+    
+    const resultArr = fs.readFileSync(pageFilePath).toString().split(/\r?\n/);
+    for (let r of resultArr)
+    {
+      const titleRegex = /^title\: (.*)$/;
+      let matches = titleRegex.exec(r);
+      if (matches)
+      {
+        title = matches[1];
+        break;
+      }
+    }
 
     // Remove extension
-    displayedFileName = path.basename(displayedFileName, path.extname(displayedFileName));
-    displayedFileName = CapitalizeFirstLetter(displayedFileName);
+    //displayedFileName = path.basename(displayedFileName, /*remove extension*/ path.extname(displayedFileName));
 
-    linkString = `[${displayedFileName}](${fileName})`;
+    //displayedFileName = CapitalizeFirstLetter(displayedFileName);
 
-    return linkString;
+    // Result:
+    // [Foo](foo.md)
+    let pn = path.basename(displayedFileName);
+    mdLink = `[${title}](${pn})`;
+
+    return mdLink;
   }
 
-  function GenerateReadMeToc(tocJsonFilePath: string): string {
+  function GenerateTocReadMe(tocJsonFilePath: string): string {
     let tocObject: any = JSON.parse(fs.readFileSync(tocJsonFilePath).toString());
 
     // Header Content
@@ -39,7 +58,7 @@ namespace Toc {
     // From tocObject
     let tocMdContent: string = "";
     for (let pageName of tocObject.pages) {
-      tocMdContent += ToMdLink(pageName);
+      tocMdContent += ToMdLink(path.join(path.dirname(tocJsonFilePath), pageName));
       tocMdContent += "  \n"; // Note, double space is important, it creates new-line in md syntax
     }
 
@@ -76,7 +95,7 @@ namespace Toc {
       /*recursive*/ false // Function is already recursing
     );
 
-    let readMeTocContent: string = GenerateReadMeToc(tocJsonFilePath);
+    let readMeTocContent: string = GenerateTocReadMe(tocJsonFilePath);
 
     fs.writeFileSync(path.join(directoryPath, "ReadMe.md"), readMeTocContent);
   }
